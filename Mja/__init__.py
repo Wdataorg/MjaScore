@@ -1,0 +1,2 @@
+from guimain import *
+MjaWin()
