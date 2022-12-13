@@ -83,3 +83,12 @@ def geninformation(valuelist):
         result.append(_valuelistfive(valuelist[4]))
         result.append(_percentscore(valuelist[-2], valuelist[-1]))
         return result
+    
+    else:
+        result.append(_valuelistone(valuelist[0]))
+        result.append(_valuelisttwo(valuelist[1]))
+        result.append(_valuelistthree(valuelist[2]))
+        result.append(_valuelistfour(valuelist[3]))
+        result.append(_valuelistfive(valuelist[4]))
+        result.append(valuelist[-1])
+        return result
