@@ -1,2 +1,2 @@
-from guimain import *
+from .guimain import *
 MjaWin()

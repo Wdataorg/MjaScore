@@ -2,9 +2,9 @@ import tkinter
 from tkinter import ttk
 import os
 from tkinter.messagebox import *
-from generateinformation import *
-from maths import *
-from Compare import *
+from .generateinformation import *
+from .maths import *
+from .Compare import *
 
 
 class MjaWin:
@@ -190,15 +190,32 @@ class MjaWin:
             cnt+=1
         buttonenter.grid(row=cnt+1, column=0)
         willwin.mainloop()
+
+    def _iswillscore(self):
+        with open(os.path.dirname(os.path.abspath(__file__)) + '\\information\main.txt', 'r+') as file:
+            lines = file.readlines()
+            if lines[-1] == '\n':
+                del lines[-1]
+            
+            if lines[0] == '\n':
+                del lines[0]
+            
+            if len(lines) < 5:
+                showerror('WARNING', 'There is no enough sample.')
+                return
+        
+        self._willscore()
+        return 
+
     def __init__(self):
         mainwin = tkinter.Tk()
         self.logo = tkinter.PhotoImage(file=os.path.dirname(os.path.abspath(__file__))+'\\logo.png')
         mainwin.title("Mja Predict Grades")
         mainwin.iconphoto(False, self.logo)
         
-        mainwin.geometry('200x100')
+        mainwin.geometry('400x100')
         addpair = tkinter.Button(mainwin, text='Add a sample', command=self._sample)
-        futurescore = tkinter.Button(mainwin, text='Predict grades', command=self._willscore)
+        futurescore = tkinter.Button(mainwin, text='Predict grades', command=self._iswillscore)
         for control in [addpair, futurescore]:
             control.pack()
         mainwin.mainloop()

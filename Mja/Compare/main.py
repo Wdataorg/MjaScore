@@ -4,8 +4,9 @@ def _sorted(scoredict):
     scoredictfunc = list(scoredict)
     for i in range(len(scoredictfunc)-1):
         for j in range(len(scoredictfunc)-i-1):
-            if scoredictfunc[j][1] > scoredictfunc[j+1][1]:
+            if scoredictfunc[j][1] < scoredictfunc[j+1][1]:
                 scoredictfunc[j], scoredictfunc[j+1] = scoredictfunc[j+1], scoredictfunc[j]
+    # print(scoredictfunc)
     return scoredictfunc
 
 def _returnscorelist(scoredict):
@@ -14,6 +15,7 @@ def _returnscorelist(scoredict):
     result = []
     for i in range(canbeaverage):
         result.append(resort[i][0][-1])
+    # print(result)
     return result
 
 def predict(scoredict, fullscore):
