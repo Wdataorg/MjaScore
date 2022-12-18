@@ -11,3 +11,14 @@
 
 
 </div>
+
+- [NEW FEATURES](#new-features)
+- [Description](#Description)
+- [Install It](#Install-It)
+- [Add a example](#Add-a-example)
+- [Predict Grades](#Predict-Grades)
+- [Principle](#Principle)
+- [LICENSE](#LICENSE)
+
+## NEW FEATURES
+
