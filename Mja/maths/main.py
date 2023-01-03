@@ -24,5 +24,3 @@ def cosine(vector1: tuple, vector2: tuple) -> float:
     result = numerator / denominator
     return result
 
-
-print(cosine([2,1,2,1], [3,1,2,2]))
